@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.vic</groupId>
+		<artifactId>user-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../user-parent/pom.xml</relativePath>
+	</parent>
+	
+	<artifactId>user-log</artifactId>
+	<packaging>jar</packaging>
+
+	<name>user-log</name>
+
+	<dependencies>
+		<!-- 
+			当user-core依赖junit 4.10, scope为test时，
+			注释掉此外的junit，那么项目就会找不到@Test，
+			原因是因为scope为test的依赖不会传递。
+		-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>uesr-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		
+	</dependencies>
+</project>
